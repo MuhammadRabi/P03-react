@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-const Alert = ({ msg, type, removeAlert, list }) => {
+const Alert = ({ show, msg, type, removeAlert, list }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       removeAlert()
@@ -11,7 +11,13 @@ const Alert = ({ msg, type, removeAlert, list }) => {
   return (
     <>
       <div className="text-sm capitalize rounded-sm w-2/3 mx-auto my-1">
-        <p className={`bg-${type}-200 py-0.5`}>{msg}</p>
+        <p
+          className={
+            type === "green" ? "bg-green-200 py-0.5" : "bg-red-200 py-0.5"
+          }
+        >
+          {msg}
+        </p>
       </div>
     </>
   )

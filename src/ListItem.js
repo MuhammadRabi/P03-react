@@ -8,10 +8,10 @@ const ListItem = ({ title }) => {
         {title}
 
         <div className="flex justify-between space-x-1">
-          <button className="text-emerald-500 cursor-pointer">
+          <button className="text-emerald-500 cursor-pointer opacity-70 hover:opacity-100">
             <FaEdit />
           </button>
-          <button className="text-red-500 cursor-pointer">
+          <button className="text-red-500 cursor-pointer opacity-70 hover:opacity-100">
             <FaPrescriptionBottleAlt />
           </button>
         </div>
