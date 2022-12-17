@@ -1,4 +1,3 @@
-import React from "react"
 import { FaEdit, FaPrescriptionBottleAlt } from "react-icons/fa"
 
 const ListItem = ({ title }) => {
