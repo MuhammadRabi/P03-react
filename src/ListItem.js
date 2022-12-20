@@ -3,7 +3,7 @@ import { FaEdit, FaPrescriptionBottleAlt } from "react-icons/fa"
 const ListItem = ({ id, title, removeItem, editItem }) => {
   return (
     <>
-      <li className="flex justify-between items-center mb-2 w-3/4 px-2 py-1 mx-auto hover:bg-slate-200">
+      <li className="flex justify-between capitalize items-center mb-2 w-3/4 px-2 py-1 mx-auto hover:bg-slate-200">
         {title}
 
         <div className="flex justify-between space-x-1">

@@ -4,7 +4,8 @@ import "./App.css"
 import { useEffect, useState } from "react"
 import Layout from "./Layout"
 import DarkMode from "./DarkMode"
-
+import { addListToLocalStorage, getListFromLocalStorage } from "./localStorage"
+/* 
 const getLocalStorage = () => {
   let list = localStorage.getItem("list")
   if (list) {
@@ -12,11 +13,12 @@ const getLocalStorage = () => {
   } else {
     return []
   }
-}
+} */
 
 function App() {
   const [name, setName] = useState("")
-  const [list, setList] = useState(getLocalStorage())
+  /*   const [list, setList] = useState(getLocalStorage())
+   */ const [list, setList] = useState(getListFromLocalStorage())
   const [editing, setEditing] = useState(false)
   const [editingID, setEditingID] = useState(null)
   const [alert, setAlert] = useState({
@@ -78,9 +80,12 @@ function App() {
     setEditingID(id)
     setName(specificEntry.title)
   }
-
+  /* 
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list))
+  }, [list]) */
+  useEffect(() => {
+    addListToLocalStorage(list)
   }, [list])
 
   return (
