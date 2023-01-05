@@ -10,7 +10,7 @@ const Alert = ({ msg, type, removeAlert, list }) => {
 
   return (
     <>
-      <div className="text-sm capitalize rounded-sm w-2/3 mx-auto my-1">
+      <div className="text-sm rounded-sm w-2/3 mx-auto my-1">
         <p
           className={
             type === "green" ? "bg-green-200 py-0.5" : "bg-red-200 py-0.5"
