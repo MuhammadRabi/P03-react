@@ -5,20 +5,10 @@ import { useEffect, useState } from "react"
 import Layout from "./Layout"
 import DarkMode from "./DarkMode"
 import { addListToLocalStorage, getListFromLocalStorage } from "./localStorage"
-/* 
-const getLocalStorage = () => {
-  let list = localStorage.getItem("list")
-  if (list) {
-    return (list = JSON.parse(localStorage.getItem("list")))
-  } else {
-    return []
-  }
-} */
 
 function App() {
   const [name, setName] = useState("")
-  /*   const [list, setList] = useState(getLocalStorage())
-   */ const [list, setList] = useState(getListFromLocalStorage())
+  const [list, setList] = useState(getListFromLocalStorage())
   const [editing, setEditing] = useState(false)
   const [editingID, setEditingID] = useState(null)
   const [alert, setAlert] = useState({
@@ -80,17 +70,14 @@ function App() {
     setEditingID(id)
     setName(specificEntry.title)
   }
-  /* 
-  useEffect(() => {
-    localStorage.setItem("list", JSON.stringify(list))
-  }, [list]) */
+
   useEffect(() => {
     addListToLocalStorage(list)
   }, [list])
 
   return (
     <Layout>
-      <section className="py-6 w-5/6 sm:w-4/6 mx-auto mt-12 text-center drop-shadow-xl bg-gray-200 dark:bg-slate-100 rounded-md md:w-2/6">
+      <section className="w-full py-6 max-w-sm mx-auto mt-12 text-center drop-shadow-xl bg-gray-200 dark:bg-slate-100 rounded-md md:max-w-lg">
         <DarkMode />
         <h3 className="font-bold my-2">Todo List</h3>
         {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
